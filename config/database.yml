@@ -1,0 +1,24 @@
+base: &base
+  adapter: mysql2
+  encoding: utf8
+  database: <%= ENV['RDS_DB_NAME'] %>
+  <% if ENV['DB_SOCKET'] %>
+  socket: <%= ENV['DB_SOCKET'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  <% else %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  <% end %>
+
+production:
+  <<: *base
+
+development:
+  <<: *base
+
+test: &test
+  <<: *base
+  database: <%= ENV['RDS_DB_NAME'] %>_test

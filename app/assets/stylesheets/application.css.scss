@@ -1,0 +1,44 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+html {
+  // background-color: rgba(0,0,0,0.7); ---this doesn't work.. opacity just needs to be applied to the raw image
+  background: image-url("background-first-cut.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+div#house {
+  width:540px; /* you can use % */
+  height: auto;
+}
+
+// set initial display states
+div#ok  { display: none; }
+div#sad { display: none; }
+
+.bubble {
+  background-color: white;
+  display: none;
+}
+
+.progress {
+  margin-top: 30px;
+  height: 50px;
+  span { height: 50px; }
+}
+
+div#hew { margin-top: 180px; }
