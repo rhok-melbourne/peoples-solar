@@ -1,4 +1,4 @@
-Secondmuse Vetc Redux
+People's Solar
 ========================
 
 ```cp dev.env .env```
